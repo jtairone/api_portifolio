@@ -1,0 +1,13 @@
+
+{
+    "server":{
+        "port": 8000,
+        "SECRET_JWT": "2024senha",
+        "SAMESITE": "lax",
+        "SECURE": ""
+    },
+    "_comments": {
+        "port": "porta utilizada para API altere a seu gosto",
+        "SECRET_JWT": "senha utilizada para gerar o JWT das rotas definir vão usar JWT"
+    }
+}

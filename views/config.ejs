@@ -1,0 +1,50 @@
+<%- include('partes/header.ejs') %>
+<body>
+    <%- include('partes/navbar.ejs') %>
+   <div class="container text-center">
+        <br/>
+        <h1>CONFIGURAÇÕES</h1>
+        <hr>
+        <form id="dadosbd">
+            <div class="card">
+                <div class="card-header">
+                  Banco de dados
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4">Host</label>
+                          <input type="text" class="form-control" id="inputhost" placeholder="IP HOST" name="host" value="<%- data.host -%>">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">Porta</label>
+                          <input type="text" class="form-control" id="inputport" placeholder="Porta" name="port" value="<%- data.port -%>">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">SERVICE_NAME/SID</label>
+                          <input type="text" class="form-control" id="inputSid" placeholder="SID" name="sid" value="<%- data.sid -%>">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">Usuário</label>
+                          <input type="text" class="form-control" id="inputuser" placeholder="usuário" name="user" value="<%- data.user -%>"> 
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputPassword4">Senha</label>
+                          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass" value="<%- data.pass -%>">
+                          <small for="labelAviso" class="p-0 pt-5 text-muted">Redigite senha para poder testar conexão</small>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <a class="btn btn-success btn-testar mt-4 disabled">Testar Conexão</a>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <br>
+            <button type="submit" class="btn btn-primary btn-submit-config">Salvar/Atualizar</button>
+          </form>
+   </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<%- include('partes/footer.ejs') %>

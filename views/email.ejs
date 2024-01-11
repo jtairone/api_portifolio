@@ -1,0 +1,93 @@
+<%- include('partes/header.ejs') %>
+  <body>
+    <%- include('partes/navbar.ejs') %>
+      <div class="container text-center">
+        <br />
+        <h1>CONFIGURAÇÕES DE E-MAIL</h1>
+        <hr>
+        <form id="dadosemail">
+          <div class="card">
+            <div class="card-header">
+              Dados do E-mail Envio de Recupeção de Senha, Validação Cad
+            </div>
+            <div class="card-body">
+              <div class="form-row">
+
+                <div class="form-group col-md-6">
+                  <label for="inputHost">HOST</label>
+                  <input type="text" class="form-control" id="inputhost" placeholder="Servidor de e-mail" name="host"
+                    value="<%- data.host -%>">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPort">PORTA</label>
+                  <input type="text" class="form-control" id="inputport" placeholder="Porta" name="port"
+                    value="<%- data.port -%>">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputUser">USUÁRIO</label>
+                  <input type="text" class="form-control" id="inputUser" placeholder="usuário e-mail" name="user"
+                    value="<%- data.user -%>">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword">SENHA</label>
+                  <input type="password" class="form-control" id="inputSenha" placeholder="senha e-mail" name="pass"
+                    value="<%- data.pass -%>">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputSecure">Requer SSL</label>
+                  <input type="hidden" class="form-control" id="inputSecure" name="secure" value="<%- data.secure -%>">
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sslradios" id="ssltrue" value="true">
+                      <label class="form-check-label" for="ssltrue">SIM</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sslradios" id="sslfalse" value="false">
+                      <label class="form-check-label" for="sslfalse">NÂO</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputSecure">TLS</label>
+                  <input type="hidden" class="form-control" id="inputTls" value="<%- data.tls -%>">
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tlsradios" id="tlstrue" value="true">
+                      <label class="form-check-label" for="tlstrue">SIM</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tlsradios" id="tlsfalse" value="false">
+                      <label class="form-check-label" for="tlsfalse">NÂO</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary btn-submit-email">Salvar/Atualizar</button>
+        </form>
+      </div>
+      <div class="container pt-5">
+        <div class="card">
+          <div class="card-header">
+            Testar Configuração SMTP
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputHost">Enviar Teste de E-mail</label>
+                <input type="text" class="form-control" id="inputteste" placeholder="preencha um e-mail enviar teste"
+                  name="teste">
+              </div>
+              <div class="form-group col-md-12">
+                <button type="button" class="btn btn-primary btn-testarSmtp">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="/js/dadosEmail.js"></script>
+  <%- include('partes/footer.ejs') %>

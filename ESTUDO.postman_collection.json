@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "20658a5b-28ed-45d9-ba42-f5c870896a94",
+		"name": "ESTUDO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15250227",
+		"_collection_link": "https://rmservicos.postman.co/workspace/Meu-Espa%C3%A7o-de-Trabalho~f81d463d-8709-4a99-8b9e-897e58b4bc1c/collection/15250227-20658a5b-28ed-45d9-ba42-f5c870896a94?action=share&source=collection_link&creator=15250227"
+	},
+	"item": [
+		{
+			"name": "Cadastro User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Teste",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teste@teste.com",
+							"type": "text"
+						},
+						{
+							"key": "senha",
+							"value": "102030",
+							"type": "text"
+						},
+						{
+							"key": "matricula",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/tecnologia/Pictures/Taz.jpg"
+						}
+					]
+				},
+				"url": "{{url}}/api/cadastrarusuario"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "teste@teste.com",
+							"type": "text"
+						},
+						{
+							"key": "senha",
+							"value": "102030",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{url}}/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/api/customer-wallets"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}

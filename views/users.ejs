@@ -1,0 +1,69 @@
+<%- include('partes/header.ejs') %>
+<body>
+    <%- include('partes/navbar.ejs') %>
+   <div class="container text-center">
+        <br/>
+        <h1>Usuários cadastrados</h1>
+        <hr>
+        <div class="container mt-3 ">
+          <div class="form-group">
+              <!-- <label for="inputBusca">Digite sua busca:</label> -->
+              <input type="text" class="form-control col-6" id="inputBusca" placeholder="Digite seu filtro">
+          </div>
+    </div>
+        <table class="table table-hover" id="tabela">
+            <thead class="thead-dark">
+              <tr class="align-baseline">
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th class="text-center" scope="col">E-mail</th>
+                <th scope="col">Matrícula</th>
+                <th scope="col">Último Acesso</th>
+                <th scope="col">arquivo foto</th>
+                <th scope="col">foto</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm-left">
+             <% for(var i=0; i<data.length; i++) { %>
+              <tr class="align-middle text-center">
+                <th class="align-middle text-center" scope="row" name="id"><%- data[i].id -%></th>
+                <td class="align-middle text-center"><%- data[i].nome -%></td>
+                <td class="align-middle text-center"><%- data[i].email -%></td>
+                <td class="align-middle text-center"><%- data[i].matricula -%></td>
+                <td class="align-middle text-center"><%- data[i].ultimologin -%></td>
+                <td class="align-middle text-center"><%- data[i].foto -%></td>
+                <td class="align-middle text-center">
+                  <div class="thumbnail">
+                    <img src="http://<%- data[i].origem -%>/img/users/<%- data[i].foto ? data[i].foto : 'sem_foto.png' -%>" alt="Miniatura da imagem">
+                    <div class="zoom">
+                      <img src="http://<%- data[i].origem -%>/img/users/<%- data[i].foto ? data[i].foto : 'sem_foto.png' -%>" alt="Imagem ampliada">
+                    </div>
+                  </div>
+                </td>
+                <td class="align-middle text-center"><a class="btn btn-primary btn-editarUser" value="<%- data[i].id -%>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                <td class="align-middle text-center"><a class="btn btn-danger btn-excluirUser" value="<%- data[i].id -%>"><i class="fa-solid fa-trash"></i></a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          <hr>
+   </div>
+</body>
+<%- include('partes/footer.ejs') %>
+<script>
+  $(document).ready(function () {
+      $('#inputBusca').on('keyup', function () {
+          var searchTerm = $(this).val().toLowerCase()
+          $('#tabela tbody tr').each(function () {
+              var linha = $(this).text().toLowerCase()
+              if (linha.indexOf(searchTerm) === -1) {
+                  $(this).hide()
+              } else {
+                  $(this).show()
+              }
+          })
+      })
+  })
+</script>

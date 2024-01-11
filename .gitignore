@@ -1,0 +1,6 @@
+node_modules
+.vscode
+instantclient
+public/img/users/*
+!public/img/users/sem_foto.png
+api/database/dbapi.sqlite

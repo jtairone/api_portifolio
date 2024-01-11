@@ -1,0 +1,21 @@
+.loader {
+  animation: is-rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-top-color: #51d4db;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+ /*  visibility: hidden; */
+}
+
+@keyframes is-rotating {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+
+  .cliente {
+    display: flex;
+    align-items: center;
+  }

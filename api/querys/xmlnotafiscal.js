@@ -1,0 +1,10 @@
+module.exports = (app) => {
+    const xmlnotafiscal = `SELECT
+        p.XMLNFE, F.CODIGO AS EMPRESA, s.CHAVENFE AS CHAVE
+        FROM PCDOCELETRONICO p 
+        INNER JOIN PCNFSAID S ON S.NUMTRANSVENDA = P.NUMTRANSACAO
+        INNER JOIN PCFILIAL F ON F.CODIGO = S.CODFILIAL
+        WHERE S.NUMTRANSVENDA = :NUMTRANSACAO`
+
+    return xmlnotafiscal
+}
