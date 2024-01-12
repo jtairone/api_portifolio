@@ -2,8 +2,8 @@ const config = require('config')
 
 module.exports = (app) => {
     const tbUsuarios = app.models.tbusuarios
-    const { validarSenha } = app.functions.saltHash
-    const { assinarJWT } = app.functions.jwt
+    const { validarSenha } = app.functions.seguranca.saltHash
+    const { assinarJWT } = app.functions.seguranca.jwt
     const { agora } = app.functions.dataHoraAtual
     const { getUserByEmail } = app.functions.getUserByEmail
     const controller = {}

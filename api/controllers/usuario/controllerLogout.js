@@ -1,6 +1,6 @@
 module.exports = (app) => {
     const controller = {}
-    const { invalidarToken } = app.functions.jwt
+    const { invalidarToken } = app.functions.seguranca.jwt
     controller.logout = (req, res) => {
         invalidarToken(req.cookies.accessToken)
         // limpar o cookie do navegador do usuário

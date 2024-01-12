@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = (app) => {
     const controller = {}
-    const { saltHash } = app.functions
+    const { saltHash } = app.functions.seguranca
     const arquivos = app.functions.renomeararquivos
     const tbUsers = app.models.tbusuarios
     controller.cadastrarUsuario = async (req, res) => {
